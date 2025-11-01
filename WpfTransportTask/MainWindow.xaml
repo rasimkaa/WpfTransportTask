@@ -17,7 +17,7 @@
 
         <TextBlock Grid.Row="0" Text="Решение транспортной задачи" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,10"/>
 
-        <GroupBox Grid.Row="1" Header="Исходные данные (Данные из скриншота)" FontWeight="Bold" Margin="5">
+        <GroupBox Grid.Row="1" Header="Исходные данные" FontWeight="Bold" Margin="5">
             <Grid x:Name="InputGrid" Margin="5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
