@@ -1,0 +1,98 @@
+﻿<Window x:Class="WpfTransportTask.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTransportTask"
+        mc:Ignorable="d"
+        Title="Транспортная задача (Ручной ввод)" Height="700" Width="850">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Решение транспортной задачи" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+
+        <GroupBox Grid.Row="1" Header="Исходные данные (Данные из скриншота)" FontWeight="Bold" Margin="5">
+            <Grid x:Name="InputGrid" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="2" Text="B1" HorizontalAlignment="Center" Margin="5"/>
+                <TextBlock Grid.Row="0" Grid.Column="3" Text="B2" HorizontalAlignment="Center" Margin="5"/>
+                <TextBlock Grid.Row="0" Grid.Column="4" Text="B3" HorizontalAlignment="Center" Margin="5"/>
+                <TextBlock Grid.Row="0" Grid.Column="5" Text="B4" HorizontalAlignment="Center" Margin="5"/>
+                <TextBlock Grid.Row="0" Grid.Column="6" Text="B5" HorizontalAlignment="Center" Margin="5"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Потребности:" VerticalAlignment="Center" Margin="5" FontWeight="Normal"/>
+                <TextBox x:Name="txtB1" Grid.Row="1" Grid.Column="2" Width="50" Margin="5" Text="140"/>
+                <TextBox x:Name="txtB2" Grid.Row="1" Grid.Column="3" Width="50" Margin="5" Text="90"/>
+                <TextBox x:Name="txtB3" Grid.Row="1" Grid.Column="4" Width="50" Margin="5" Text="160"/>
+                <TextBox x:Name="txtB4" Grid.Row="1" Grid.Column="5" Width="50" Margin="5" Text="110"/>
+                <TextBox x:Name="txtB5" Grid.Row="1" Grid.Column="6" Width="50" Margin="5" Text="150"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="A1" VerticalAlignment="Center" Margin="5"/>
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="A2" VerticalAlignment="Center" Margin="5"/>
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="A3" VerticalAlignment="Center" Margin="5"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="1" Text="Запас:" VerticalAlignment="Center" Margin="5" FontWeight="Normal"/>
+                <TextBlock Grid.Row="3" Grid.Column="1" Text="Запас:" VerticalAlignment="Center" Margin="5" FontWeight="Normal"/>
+                <TextBlock Grid.Row="4" Grid.Column="1" Text="Запас:" VerticalAlignment="Center" Margin="5" FontWeight="Normal"/>
+
+                <TextBox x:Name="txtA1" Grid.Row="2" Grid.Column="1" Width="50" Margin="5,5,15,5" Text="230"/>
+                <TextBox x:Name="txtA2" Grid.Row="3" Grid.Column="1" Width="50" Margin="5,5,15,5" Text="250"/>
+                <TextBox x:Name="txtA3" Grid.Row="4" Grid.Column="1" Width="50" Margin="5,5,15,5" Text="170"/>
+
+                <TextBox x:Name="txtC11" Grid.Row="2" Grid.Column="2" Width="50" Margin="5" Text="40"/>
+                <TextBox x:Name="txtC12" Grid.Row="2" Grid.Column="3" Width="50" Margin="5" Text="19"/>
+                <TextBox x:Name="txtC13" Grid.Row="2" Grid.Column="4" Width="50" Margin="5" Text="25"/>
+                <TextBox x:Name="txtC14" Grid.Row="2" Grid.Column="5" Width="50" Margin="5" Text="25"/>
+                <TextBox x:Name="txtC15" Grid.Row="2" Grid.Column="6" Width="50" Margin="5" Text="35"/>
+
+                <TextBox x:Name="txtC21" Grid.Row="3" Grid.Column="2" Width="50" Margin="5" Text="49"/>
+                <TextBox x:Name="txtC22" Grid.Row="3" Grid.Column="3" Width="50" Margin="5" Text="26"/>
+                <TextBox x:Name="txtC23" Grid.Row="3" Grid.Column="4" Width="50" Margin="5" Text="27"/>
+                <TextBox x:Name="txtC24" Grid.Row="3" Grid.Column="5" Width="50" Margin="5" Text="18"/>
+                <TextBox x:Name="txtC25" Grid.Row="3" Grid.Column="6" Width="50" Margin="5" Text="38"/>
+
+                <TextBox x:Name="txtC31" Grid.Row="4" Grid.Column="2" Width="50" Margin="5" Text="46"/>
+                <TextBox x:Name="txtC32" Grid.Row="4" Grid.Column="3" Width="50" Margin="5" Text="27"/>
+                <TextBox x:Name="txtC33" Grid.Row="4" Grid.Column="4" Width="50" Margin="5" Text="36"/>
+                <TextBox x:Name="txtC34" Grid.Row="4" Grid.Column="5" Width="50" Margin="5" Text="40"/>
+                <TextBox x:Name="txtC35" Grid.Row="4" Grid.Column="6" Width="50" Margin="5" Text="45"/>
+
+            </Grid>
+        </GroupBox>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+            <Button x:Name="NWC_Button" Content="Метод Северо-Западного Угла" Width="220" Margin="5" Click="NWC_Button_Click"/>
+            <Button x:Name="MEC_Button" Content="Метод Минимального Элемента" Width="220" Margin="5" Click="MEC_Button_Click"/>
+            <Button x:Name="Potentials_Button" Content="Метод Потенциалов" Width="250" Margin="5" Click="Potentials_Button_Click"/>
+        </StackPanel>
+
+        <DataGrid Grid.Row="3" x:Name="PlanDataGrid" Margin="5" AutoGenerateColumns="True" IsReadOnly="True"
+                  CanUserAddRows="False" CanUserDeleteRows="False" CanUserSortColumns="False" 
+                  HeadersVisibility="Column" SelectionUnit="Cell" />
+
+        <TextBox Grid.Row="4" x:Name="LogTextBox" Margin="5" IsReadOnly="True" VerticalScrollBarVisibility="Auto"
+                 FontFamily="Consolas" FontSize="12" TextWrapping="Wrap"
+                 Background="#FFF0F0F0" Foreground="#FF333333" BorderBrush="#FFCCCCCC" BorderThickness="1"/>
+    </Grid>
+</Window>
